@@ -11,7 +11,6 @@
       undofile = true;
 
       guifont = "monospace:h12";
-      linespace = 2;
     };
 
     globals = {
