@@ -1,0 +1,20 @@
+{
+  imports = [
+    ./cmp.nix
+    ./colorscheme.nix
+    ./comments.nix
+    ./filetree.nix
+    ./git.nix
+    ./icons.nix
+    ./keymaps.nix
+    ./lastplace.nix
+    ./lsp.nix
+    ./settings.nix
+    ./snippets.nix
+    ./statusline.nix
+    ./surround.nix
+    ./telescope.nix
+    ./treesitter.nix
+    ./which-key.nix
+  ];
+}
