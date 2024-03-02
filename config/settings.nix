@@ -14,6 +14,10 @@
     };
 
     globals = {
+      mapleader = " ";
+
+      netrw_banner = 0;
+
       neovide_transparency = 0.9;
 
       neovide_floating_blur_amount_x = 2.0;

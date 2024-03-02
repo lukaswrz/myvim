@@ -3,7 +3,6 @@
     ./cmp.nix
     ./colorscheme.nix
     ./comments.nix
-    ./filetree.nix
     ./git.nix
     ./icons.nix
     ./keymaps.nix
