@@ -3,35 +3,23 @@
     # Fast split switching
     {
       mode = "n";
-      key = "<A-j>";
-      action = "<C-W><C-J>";
+      key = "<C-j>";
+      action = "<C-w><C-j>";
     }
     {
       mode = "n";
-      key = "<A-k>";
-      action = "<C-W><C-K>";
+      key = "<C-k>";
+      action = "<C-w><C-k>";
     }
     {
       mode = "n";
-      key = "<A-l>";
-      action = "<C-W><C-L>";
+      key = "<C-l>";
+      action = "<C-w><C-l>";
     }
     {
       mode = "n";
-      key = "<A-h>";
-      action = "<C-W><C-H>";
-    }
-
-    # Move text in visual mode
-    {
-      mode = "v";
-      key = "J";
-      action = ":m '>+1<CR>gv=gv";
-    }
-    {
-      mode = "v";
-      key = "K";
-      action = ":m '<-2<CR>gv=gv";
+      key = "<C-h>";
+      action = "<C-w><C-h>";
     }
 
     # Keep cursor position when joining lines
@@ -97,35 +85,6 @@
       mode = "v";
       key = "<Leader>d";
       action = "\"_d";
-    }
-
-    # Remove ex keymap
-    {
-      mode = "n";
-      key = "Q";
-      action = "<Nop>";
-    }
-
-    # QuickFix
-    {
-      mode = "n";
-      key = "<C-k>";
-      action = "<Cmd>cnext<CR>zz";
-    }
-    {
-      mode = "n";
-      key = "<C-j>";
-      action = "<Cmd>cprev<CR>zz";
-    }
-    {
-      mode = "n";
-      key = "<Leader>k";
-      action = "<Cmd>lnext<CR>zz";
-    }
-    {
-      mode = "n";
-      key = "<Leader>j";
-      action = "<Cmd>lprev<CR>zz";
     }
   ];
 }

@@ -24,7 +24,7 @@
               return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
             end
 
-            local luasnip = require "luasnip";
+            local luasnip = require "luasnip"
 
             if cmp.visible() then
               cmp.select_next_item()

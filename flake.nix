@@ -27,15 +27,11 @@
           inherit pkgs;
           module = import ./config;
         };
-        nvim = nixvim'.makeNixvimWithModule nixvimModule;
+        package = nixvim'.makeNixvimWithModule nixvimModule;
       in {
         checks.default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
 
-        packages.default = nvim;
-
-        devShells.default = pkgs.mkShellNoCC {
-          packages = [nvim];
-        };
+        packages.default = package;
 
         formatter = pkgs.alejandra;
       };

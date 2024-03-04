@@ -3,17 +3,21 @@
     ./cmp.nix
     ./colorscheme.nix
     ./comments.nix
+    ./direnv.nix
     ./git.nix
     ./icons.nix
+    ./indent.nix
     ./keymaps.nix
     ./lastplace.nix
     ./lsp.nix
+    ./mini.nix
     ./settings.nix
     ./snippets.nix
-    ./statusline.nix
-    ./surround.nix
     ./telescope.nix
+    ./todo.nix
     ./treesitter.nix
+    ./trouble.nix
+    ./undotree.nix
     ./which-key.nix
   ];
 }
