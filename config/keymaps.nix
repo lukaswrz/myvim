@@ -53,38 +53,36 @@
       action = "Nzzzv";
     }
 
-    # Paste without losing paste buffer
+    # Use system clipboard
     {
-      mode = "x";
-      key = "<Leader>p";
-      action = "\"_dP";
-    }
-
-    # Yank and delete to system clipboard
-    {
-      mode = "n";
+      mode = ["n" "v"];
       key = "<Leader>y";
       action = "\"+y";
     }
     {
-      mode = "v";
-      key = "<Leader>y";
-      action = "\"+y";
-    }
-    {
-      mode = "n";
+      mode = ["n" "v"];
       key = "<Leader>Y";
       action = "\"+Y";
     }
     {
-      mode = "n";
+      mode = ["n" "v"];
       key = "<Leader>d";
-      action = "\"_d";
+      action = "\"+d";
     }
     {
-      mode = "v";
-      key = "<Leader>d";
-      action = "\"_d";
+      mode = ["n" "v"];
+      key = "<Leader>D";
+      action = "\"+D";
+    }
+    {
+      mode = ["n" "v"];
+      key = "<Leader>p";
+      action = "\"+p";
+    }
+    {
+      mode = ["n" "v"];
+      key = "<Leader>P";
+      action = "\"+P";
     }
   ];
 }
