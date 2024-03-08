@@ -1,5 +1,6 @@
 {
   imports = [
+    ./files.nix
     ./ide
     ./keymaps.nix
     ./mini.nix

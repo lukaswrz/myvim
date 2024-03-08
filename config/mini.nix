@@ -14,13 +14,9 @@
 
       starter = {};
 
-      files = {};
-
       pick = {};
 
       statusline = {};
-
-      tabline = {};
 
       extra = {};
     };
