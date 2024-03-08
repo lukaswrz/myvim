@@ -65,13 +65,13 @@
       keymaps = {
         silent = true;
         diagnostic = {
-          "[d" = {
+          "<Leader>k" = {
             action = "goto_prev";
-            desc = "Go to prev diagnostic";
+            desc = "Goto Prev Diagnostic";
           };
-          "]d" = {
+          "<Leader>j" = {
             action = "goto_next";
-            desc = "Go to next diagnostic";
+            desc = "Goto Next Diagnostic";
           };
           "<Leader>e" = {
             action = "open_float";
@@ -80,6 +80,30 @@
         };
 
         lspBuf = {
+          "gd" = {
+            action = "definition";
+            desc = "Goto Definition (assignment)";
+          };
+          "gD" = {
+            action = "declaration";
+            desc = "Goto Declaration (first occurrence)";
+          };
+          "gy" = {
+            action = "type_definition";
+            desc = "Goto Type Defition";
+          };
+          "gi" = {
+            action = "implementation";
+            desc = "Goto Implementation";
+          };
+          "gr" = {
+            action = "references";
+            desc = "Goto References";
+          };
+          "K" = {
+            action = "hover";
+            desc = "Hover";
+          };
           "<Leader>ca" = {
             action = "code_action";
             desc = "Code Actions";
@@ -92,29 +116,17 @@
             action = "format";
             desc = "Format";
           };
-          "gd" = {
-            action = "definition";
-            desc = "Goto definition (assignment)";
-          };
-          "gD" = {
-            action = "declaration";
-            desc = "Goto declaration (first occurrence)";
-          };
-          "gy" = {
-            action = "type_definition";
-            desc = "Goto Type Defition";
-          };
-          "gi" = {
-            action = "implementation";
-            desc = "Goto Implementation";
-          };
-          "<Leader>k" = {
-            action = "hover";
-            desc = "Hover";
-          };
-          "<Leader>ls" = {
+          "<Leader>sh" = {
             action = "signature_help";
             desc = "Signature Help";
+          };
+          "<Leader>wa" = {
+            action = "add_workspace_folder";
+            desc = "Add Workspace Folder";
+          };
+          "<Leader>wr" = {
+            action = "remove_workspace_folder";
+            desc = "Remove Workspace Folder";
           };
         };
       };

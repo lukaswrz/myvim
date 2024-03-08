@@ -1,23 +1,21 @@
 {
   imports = [
-    ./cmp.nix
-    ./colorscheme.nix
-    ./comments.nix
-    ./direnv.nix
-    ./git.nix
-    ./icons.nix
-    ./indent.nix
+    ./ide
     ./keymaps.nix
-    ./lastplace.nix
-    ./lsp.nix
     ./mini.nix
+    ./neovide.nix
     ./settings.nix
-    ./snippets.nix
-    ./telescope.nix
-    ./todo.nix
-    ./treesitter.nix
-    ./trouble.nix
-    ./undotree.nix
-    ./which-key.nix
   ];
+
+  globals.mapleader = " ";
+
+  colorschemes.ayu.enable = true;
+
+  plugins = {
+    which-key.enable = true;
+
+    undotree.enable = true;
+
+    lastplace.enable = true;
+  };
 }

@@ -1,3 +1,0 @@
-{
-  plugins.direnv.enable = true;
-}
