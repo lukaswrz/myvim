@@ -10,6 +10,8 @@
       enable = true;
       position = "bottom";
       height = 5;
+      autoOpen = true;
+      autoClose = true;
     };
 
     comment-nvim.enable = true;
