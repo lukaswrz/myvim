@@ -1,4 +1,8 @@
 {
+  globalOptions = {
+    guifont = "monospace";
+  };
+
   globals = {
     neovide_transparency = 0.9;
 
