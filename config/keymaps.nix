@@ -1,7 +1,7 @@
 {lib, ...}: {
   keymaps =
+    # Keep cursor position when joining lines
     [
-      # Keep cursor position when joining lines
       {
         mode = "n";
         key = "J";

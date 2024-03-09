@@ -1,4 +1,6 @@
 {
+  globals.mapleader = " ";
+
   globalOptions = {
     number = true;
     relativenumber = true;
