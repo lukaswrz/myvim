@@ -1,5 +1,8 @@
 {
   imports = [
+    ./clipboard.nix
+    ./split.nix
+    ./tab.nix
   ];
 
   keymaps = [

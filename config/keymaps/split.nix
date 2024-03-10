@@ -1,4 +1,5 @@
-{lib, ...}: {
+{
+  # Fast split movement
   keymaps = (
     map (
       k: {
