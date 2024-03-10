@@ -25,5 +25,7 @@
     gitsigns.enable = true;
 
     indent-o-matic.enable = true;
+
+    nvim-autopairs.enable = true;
   };
 }
