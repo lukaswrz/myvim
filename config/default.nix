@@ -1,7 +1,7 @@
 {
   imports = [
     ./ide
-    ./keymaps.nix
+    ./keymaps
     ./neovide
     ./qol
     ./settings.nix

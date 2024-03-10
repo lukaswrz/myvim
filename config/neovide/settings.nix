@@ -1,6 +1,8 @@
 {
   globalOptions = {
     guifont = "monospace";
+
+    linespace = 4;
   };
 
   globals = {
