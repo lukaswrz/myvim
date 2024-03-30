@@ -1,7 +1,7 @@
 {
   globals.mapleader = " ";
 
-  globalOptions = {
+  globalOpts = {
     number = true;
     relativenumber = true;
 

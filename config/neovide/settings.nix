@@ -1,5 +1,5 @@
 {
-  globalOptions = {
+  globalOpts = {
     guifont = "monospace";
 
     linespace = 4;

@@ -8,13 +8,15 @@
   plugins = {
     trouble = {
       enable = true;
-      position = "bottom";
-      height = 5;
-      autoOpen = true;
-      autoClose = true;
+      settings = {
+        position = "bottom";
+        height = 5;
+        auto_open = true;
+        auto_close = true;
+      };
     };
 
-    comment-nvim.enable = true;
+    comment.enable = true;
 
     treesitter.enable = true;
 

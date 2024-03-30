@@ -5,8 +5,9 @@
 }: {
   plugins.oil = {
     enable = true;
-    defaultFileExplorer = true;
-    deleteToTrash = true;
-    trashCommand = lib.getExe' pkgs.trash-cli "trash-put";
+    settings = {
+      default_file_explorer = true;
+      delete_to_trash = true;
+    };
   };
 }
