@@ -11,8 +11,6 @@
       settings = {
         position = "bottom";
         height = 5;
-        auto_open = true;
-        auto_close = true;
       };
     };
 

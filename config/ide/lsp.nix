@@ -15,7 +15,7 @@
 
         dockerls.enable = true;
 
-        emmet_ls.enable = true;
+        emmet-ls.enable = true;
 
         eslint.enable = true;
 
@@ -38,7 +38,7 @@
 
         marksman.enable = true;
 
-        nil_ls.enable = true;
+        nil-ls.enable = true;
 
         nushell.enable = true;
 
