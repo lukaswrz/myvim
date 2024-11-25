@@ -6,13 +6,7 @@
   ];
 
   plugins = {
-    trouble = {
-      enable = true;
-      settings = {
-        position = "bottom";
-        height = 5;
-      };
-    };
+    trouble.enable = true;
 
     comment.enable = true;
 

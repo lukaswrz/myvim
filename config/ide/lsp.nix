@@ -15,11 +15,9 @@
 
         dockerls.enable = true;
 
-        emmet-ls.enable = true;
+        emmet_ls.enable = true;
 
         eslint.enable = true;
-
-        gdscript.enable = true;
 
         gopls.enable = true;
 
@@ -31,14 +29,14 @@
 
         jsonls.enable = true;
 
-        lua-ls = {
+        lua_ls = {
           enable = true;
           settings.telemetry.enable = false;
         };
 
         marksman.enable = true;
 
-        nil-ls.enable = true;
+        nil_ls.enable = true;
 
         nushell.enable = true;
 
@@ -46,7 +44,7 @@
 
         pyright.enable = true;
 
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = false;
@@ -56,7 +54,7 @@
 
         texlab.enable = true;
 
-        tsserver.enable = true;
+        ts_ls.enable = true;
 
         yamlls.enable = true;
 

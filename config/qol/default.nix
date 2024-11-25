@@ -9,5 +9,7 @@
     which-key.enable = true;
 
     undotree.enable = true;
+
+    web-devicons.enable = true;
   };
 }
