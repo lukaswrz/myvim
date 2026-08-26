@@ -1,39 +1,56 @@
 {
-  description = "My Nixvim configuration";
+  description = "myvim";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixvim.url = "github:nix-community/nixvim";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = {
-    nixpkgs,
-    nixvim,
-    flake-parts,
-    ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      ...
+    }:
+    let
+      inherit (nixpkgs) lib;
+
       systems = nixpkgs.lib.systems.flakeExposed;
 
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: let
-        nixvimLib = nixvim.lib.${system};
-        nixvim' = nixvim.legacyPackages.${system};
-        nixvimModule = {
-          inherit pkgs;
-          module = import ./config;
-        };
-        package = nixvim'.makeNixvimWithModule nixvimModule;
-      in {
-        checks.default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+      forAllSystems =
+        f:
+        lib.genAttrs systems (
+          system:
+          f {
+            inherit system;
+            pkgs = nixpkgs.legacyPackages.${system};
+            selfPackages = self.packages.${system};
+          }
+        );
+    in
+    {
+      devShells = forAllSystems (
+        { pkgs, selfPackages, ... }:
+        {
+          default = pkgs.mkShell {
+            packages = [
+              selfPackages.default
 
-        packages.default = package;
+              # Formatters
+              pkgs.treefmt
+              pkgs.nixfmt
+              pkgs.prettier
+              pkgs.taplo
+              pkgs.stylua
+            ];
+          };
+        }
+      );
 
-        formatter = pkgs.alejandra;
-      };
+      formatter = forAllSystems ({ pkgs, ... }: pkgs.treefmt);
+
+      packages = forAllSystems (
+        { pkgs, ... }:
+        {
+          default = pkgs.callPackage ./package.nix { };
+        }
+      );
     };
 }

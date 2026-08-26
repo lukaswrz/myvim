@@ -1,0 +1,17 @@
+{ vimPlugins }: [
+  vimPlugins.telescope-nvim
+  vimPlugins.nvim-treesitter.withAllGrammars
+  vimPlugins.guess-indent-nvim
+  vimPlugins.modus-themes-nvim
+  vimPlugins.mini-nvim
+  vimPlugins.oil-nvim
+  vimPlugins.fidget-nvim
+  vimPlugins.conform-nvim
+  vimPlugins.luasnip
+  vimPlugins.nvim-lspconfig
+  vimPlugins.cmp-nvim-lsp
+  vimPlugins.cmp-buffer
+  vimPlugins.cmp-path
+  vimPlugins.cmp-cmdline
+  vimPlugins.nvim-cmp
+]

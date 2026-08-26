@@ -1,0 +1,27 @@
+[formatter.nix]
+command = "nixfmt"
+options = ["--"]
+includes = ["*.nix"]
+
+[formatter.toml]
+command = "taplo"
+options = ["format", "--"]
+includes = ["*.toml"]
+
+[formatter.markdown]
+command = "prettier"
+options = ["--parser", "markdown", "--write", "--"]
+includes = ["*.md"]
+
+[formatter.lua]
+command = "stylua"
+options = [
+  "--indent-type",
+  "Spaces",
+  "--indent-width",
+  "4",
+  "--call-parentheses",
+  "None",
+  "--",
+]
+includes = ["*.lua"]
