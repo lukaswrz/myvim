@@ -214,14 +214,14 @@ do
         })
 
         -- Padding around the editor
-        vim.g.neovide_padding_top = 10
-        vim.g.neovide_padding_bottom = 10
-        vim.g.neovide_padding_left = 10
-        vim.g.neovide_padding_right = 10
+        vim.g.neovide_padding_top = 0
+        vim.g.neovide_padding_bottom = 0
+        vim.g.neovide_padding_left = 0
+        vim.g.neovide_padding_right = 0
 
         -- Cursor animation
-        vim.g.neovide_cursor_animation_length = 0.02
-        vim.g.neovide_cursor_trail_size = 0.2
+        vim.g.neovide_cursor_animation_length = 0
+        vim.g.neovide_cursor_trail_size = 0
 
         -- Cursor particles
         vim.g.neovide_cursor_vfx_mode = ""
