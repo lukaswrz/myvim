@@ -15,4 +15,5 @@
   vimPlugins.cmp-cmdline
   vimPlugins.nvim-cmp
   vimPlugins.direnv-vim
+  vimPlugins.nvim-autopairs
 ]

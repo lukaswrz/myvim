@@ -252,6 +252,8 @@ end
 do
     require("guess-indent").setup()
 
+    require("nvim-autopairs").setup()
+
     -- Modus theme
     require("modus-themes").setup {
         style = "modus_vivendi",
