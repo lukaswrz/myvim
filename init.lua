@@ -264,6 +264,7 @@ do
     }
     vim.cmd.colorscheme "modus"
 
+    require("mini.icons").setup { style = "ascii" }
     require("mini.move").setup()
     require("mini.surround").setup()
     require("mini.ai").setup()
