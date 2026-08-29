@@ -118,6 +118,12 @@ do
         silent = true,
     })
 
+    -- Open terminal
+    vim.keymap.set("n", "<Leader>t", "<Cmd>terminal<CR>", {
+        silent = true,
+        desc = "Open terminal",
+    })
+
     -- Exit terminal mode
     vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
         silent = true,
