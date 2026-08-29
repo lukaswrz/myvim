@@ -14,4 +14,5 @@
   vimPlugins.cmp-path
   vimPlugins.cmp-cmdline
   vimPlugins.nvim-cmp
+  vimPlugins.direnv-vim
 ]
