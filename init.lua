@@ -28,6 +28,20 @@ do
     vim.o.linebreak = true
     vim.o.breakindent = true
 
+    -- Which data to save in sessions
+    vim.opt.sessionoptions = {
+        "blank",
+        "buffers",
+        "curdir",
+        "folds",
+        "help",
+        "tabpages",
+        "winsize",
+        "winpos",
+        "terminal",
+        "localoptions",
+    }
+
     -- Enable undo/redo changes even after closing and reopening a file
     vim.o.undofile = true
 
@@ -269,12 +283,8 @@ do
     })
 end
 
--- ENHANCEMENTS
+-- THEME
 do
-    require("guess-indent").setup()
-
-    require("nvim-autopairs").setup()
-
     -- Modus theme
     require("modus-themes").setup {
         style = "modus_vivendi",
@@ -284,7 +294,13 @@ do
         },
     }
     vim.cmd.colorscheme "modus"
+end
 
+-- ENHANCEMENTS
+do
+    require("guess-indent").setup()
+    require("nvim-autopairs").setup()
+    require("auto-session").setup()
     require("mini.icons").setup { style = "ascii" }
     require("mini.move").setup()
     require("mini.surround").setup()
