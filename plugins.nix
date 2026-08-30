@@ -6,7 +6,6 @@
   vimPlugins.mini-nvim
   vimPlugins.oil-nvim
   vimPlugins.fidget-nvim
-  vimPlugins.conform-nvim
   vimPlugins.luasnip
   vimPlugins.nvim-lspconfig
   vimPlugins.cmp-nvim-lsp

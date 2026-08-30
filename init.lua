@@ -36,14 +36,14 @@ do
     -- Keep signcolumn on by default
     vim.o.signcolumn = "yes"
 
-    -- Decrease update time
+    -- Update time
     vim.o.updatetime = 250
 
     -- Automatically update files when changed externally
     vim.o.autoread = true
 
-    -- Decrease mapped sequence wait time
-    vim.o.timeoutlen = 300
+    -- Key sequence wait time
+    vim.o.timeoutlen = 1000
 
     -- Configure how new splits should be opened
     vim.o.splitright = true
@@ -95,7 +95,7 @@ do
     }
 
     -- Toggle diagnostic virtual lines
-    vim.keymap.set("n", "<Leader>tl", function()
+    vim.keymap.set("n", "<Leader>D", function()
         vim.diagnostic.config {
             virtual_lines = not vim.diagnostic.config().virtual_lines,
         }
@@ -105,7 +105,7 @@ do
     })
 
     -- Open diagnostic list
-    vim.keymap.set("n", "<Leader>q", vim.diagnostic.setloclist, {
+    vim.keymap.set("n", "<Leader>dd", vim.diagnostic.setloclist, {
         silent = true,
         desc = "Open diagnostic list",
     })
@@ -302,28 +302,51 @@ do
     vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("lsp-attach-setup", { clear = true }),
         callback = function(event)
-            -- Rename the variable under the cursor
-            vim.keymap.set("n", "grn", vim.lsp.buf.rename, {
+            vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, {
                 silent = true,
-                desc = "Rename",
+                desc = "Rename symbol",
             })
 
-            -- Execute a code action, usually the cursor needs to be on top of an error or a suggestion from the language server for this to activate
-            vim.keymap.set({ "n", "x" }, "gra", vim.lsp.buf.code_action, {
+            -- Usually the cursor needs to be on top of an error or a suggestion from the language server for this to activate
+            vim.keymap.set({ "n", "x" }, "<Leader>la", vim.lsp.buf.code_action, {
                 silent = true,
-                desc = "Go to code action",
+                desc = "Execute a code action",
             })
 
-            -- Go to declaration
-            vim.keymap.set("n", "grD", vim.lsp.buf.declaration, {
+            vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.references, {
                 silent = true,
-                desc = "Goto declaration",
+                desc = "Find references",
+            })
+
+            vim.keymap.set("n", "<Leader>li", vim.lsp.buf.implementation, {
+                silent = true,
+                desc = "Go to implementation",
+            })
+
+            vim.keymap.set("n", "<Leader>ld", vim.lsp.buf.definition, {
+                silent = true,
+                desc = "Go to definition",
+            })
+
+            vim.keymap.set("n", "<Leader>lD", vim.lsp.buf.declaration, {
+                silent = true,
+                desc = "Go to declaration",
+            })
+
+            vim.keymap.set("n", "<Leader>lt", vim.lsp.buf.type_definition, {
+                silent = true,
+                desc = "Go to type definition",
+            })
+
+            vim.keymap.set({ "n", "x" }, "<Leader>lF", vim.lsp.buf.format, {
+                silent = true,
+                desc = "Format document",
             })
 
             -- Toggle inlay hints in the code, if the language server supports them
             local client = vim.lsp.get_client_by_id(event.data.client_id)
             if client and client:supports_method("textDocument/inlayHint", event.buf) then
-                vim.keymap.set("n", "<Leader>th", function()
+                vim.keymap.set("n", "<Leader>lh", function()
                     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }, {
                         bufnr = event.buf,
                     })
@@ -360,26 +383,6 @@ do
         "yamlls",
         "taplo",
     }
-end
-
--- FORMATTING
-do
-    require("conform").setup {
-        notify_on_error = false,
-        format_on_save = function()
-            return { timeout_ms = 500 }
-        end,
-        default_format_opts = {
-            lsp_format = "fallback",
-        },
-    }
-
-    vim.keymap.set({ "n", "v" }, "<Leader>df", function()
-        require("conform").format { async = true }
-    end, {
-        silent = true,
-        desc = "Format buffer",
-    })
 end
 
 -- AUTOCOMPLETE & SNIPPETS
