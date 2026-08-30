@@ -176,6 +176,25 @@ do
         silent = true,
         desc = "Dedent while keeping selection",
     })
+
+    vim.keymap.set("n", "<Leader>F", function()
+        vim.cmd.write()
+
+        local c = vim.system({
+            "treefmt",
+            "--",
+            vim.api.nvim_buf_get_name(0),
+        }):wait()
+
+        print("treefmt exited with code " .. c.code)
+
+        if c.code == 0 then
+            vim.cmd.edit()
+        end
+    end, {
+        silent = true,
+        desc = "Run treefmt on the current file",
+    })
 end
 
 -- GRAPHICAL INTERFACE
