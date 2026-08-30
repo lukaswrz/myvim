@@ -23,7 +23,9 @@ do
         vim.o.clipboard = "unnamedplus"
     end)
 
-    -- Enable break indent
+    -- Wrapping
+    vim.o.wrap = true
+    vim.o.linebreak = true
     vim.o.breakindent = true
 
     -- Enable undo/redo changes even after closing and reopening a file
