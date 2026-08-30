@@ -194,19 +194,29 @@ do
     })
 
     vim.keymap.set("n", "<Leader>F", function()
-        vim.cmd.write()
+        local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+        local input = table.concat(lines, "\n")
 
-        local c = vim.system({
+        local result = vim.system({
             "treefmt",
+            "--stdin",
             "--",
             vim.api.nvim_buf_get_name(0),
-        }):wait()
+        }, { stdin = input }):wait()
 
-        print("treefmt exited with code " .. c.code)
-
-        if c.code == 0 then
-            vim.cmd.edit()
+        if result.code ~= 0 then
+            vim.notify("treefmt exited with code " .. result.code, vim.log.levels.ERROR)
+            return
         end
+
+        local output = result.stdout
+
+        if not output then
+            vim.notify("Unable to capture treefmt output", vim.log.levels.ERROR)
+            return
+        end
+
+        vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(output, "\n"))
     end, {
         silent = true,
         desc = "Run treefmt on the current file",
